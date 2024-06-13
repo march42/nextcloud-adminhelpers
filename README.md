@@ -6,24 +6,16 @@ I needed some extras for Nextcloud and so I developed this.
 
 ### FileExists command
 
-`occ files:exists <file>`
+`occ files:exists <file> [--type=file|folder|ignore]`
 
 - checks if the given file, File ID or Nextcloud path, exists
+- check if type is `--type=file` regular file
+- check if type is `--type=folder` folder
+- ignore type and check only existance
 
 ### FileChecksum command
 
-`occ files:checksum <file>`
+`occ files:checksum <file> [--type=sha512|sha256|md5|...]`
 
-- ouitput the files stored checksum
-
-## Resources
-
-### Documentation for developers:
-
-- General documentation and tutorials: https://nextcloud.com/developer
-- Technical documentation: https://docs.nextcloud.com/server/latest/developer_manual
-
-### Help for developers:
-
-- Official community chat: https://cloud.nextcloud.com/call/xs25tz5y
-- Official community forum: https://help.nextcloud.com/c/dev/11
+- output the files hash
+- `--type=?` output available `hash_algos()`
