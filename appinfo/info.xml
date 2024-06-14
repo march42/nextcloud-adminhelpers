@@ -1,30 +1,47 @@
 <?xml version="1.0"?>
 <info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-	<id>adminhelpers</id>
+	<!-- https://nextcloudappstore.readthedocs.io/en/latest/developer.html#app-metadata -->
 
+	<id>adminhelpers</id>
 	<name>Admin Helpers</name>
+
 	<summary>some helpful additions, mostly for occ</summary>
-	<description>some helpful additions, mostly for occ</description>
+	<description>Tools for handling via command line and shell script.
+
+## extra commands for occ
+
+- `occ files:exists [file]`
+
+- `occ files:hash [file]`
+	</description>
 
 	<version>1.0.0</version>
 	<licence>agpl</licence>
 
 	<author mail="marchefter@march42.net" homepage="https://github.com/march42/">Marc Hefter</author>
+	<screenshot>https://github.com/march42/nextcloud-adminhelpers/wiki/screenshot.png</screenshot>
+	<website>https://github.com/march42/nextcloud-adminhelpers/wiki/</website>
+    <repository type="git">https://github.com/march42/nextcloud-adminhelpers.git</repository>
+	<bugs>https://github.com/march42/nextcloud-adminhelpers/issues/</bugs>
+    <documentation>
+        <user>https://github.com/march42/nextcloud-adminhelpers/wiki/#user-documentation</user>
+        <admin>https://github.com/march42/nextcloud-adminhelpers/wiki/#admin-documentation</admin>
+        <developer>https://github.com/march42/nextcloud-adminhelpers/wiki/#developer-documentation</developer>
+    </documentation>
 
 	<namespace>AdminHelpers</namespace>
 
 	<category>files</category>
 	<category>tools</category>
 
-	<bugs>https://github.com/march42/nextcloud-adminhelpers/issues/</bugs>
 	<dependencies>
 		<nextcloud min-version="29" max-version="29"/>
 	</dependencies>
 
     <commands>
         <command>OCA\AdminHelpers\Command\FileExists</command>
-        <command>OCA\AdminHelpers\Command\FileChecksum</command>
+        <command>OCA\AdminHelpers\Command\FileHash</command>
     </commands>
 
     <!--settings>

@@ -34,7 +34,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class FileChecksum extends Command {
+class FileHash extends Command {
 	public function __construct(
 		private FileUtils $fileUtils,
 	) {
@@ -43,8 +43,8 @@ class FileChecksum extends Command {
 
 	protected function configure(): void {
 		$this
-			->setName('files:checksum')
-			->setDescription('get stored checksum of file')
+			->setName('files:hash')
+			->setDescription('hash file')
 			->addArgument('file', InputArgument::REQUIRED, "Source file id or Nextcloud path")
 			->addOption('type', 't', InputOption::VALUE_OPTIONAL, "hash type sha512,sha256,md5 whatever your PHP supports (check hash_algos())", 'sha512')
 			;
@@ -74,7 +74,7 @@ class FileChecksum extends Command {
 		}
 
 		$checksum = $node->hash($hashType);
-		$output->writeln("$checksum");
+		$output->writeln( $checksum );
 		return self::SUCCESS;
 	}
 }
